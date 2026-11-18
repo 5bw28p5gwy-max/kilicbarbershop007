@@ -288,16 +288,15 @@ async function slots(showErrors = true) {
   }
 
   try {
-    // Veritabanındaki gerçek fonksiyon: get_busy_slots(p_date).
-    // Fonksiyon aynı günün tüm berberlerini döndürür; burada seçili berbere göre süzüyoruz.
-    const result = await db.rpc('get_busy_slots', { p_date: date });
+    const result = await db.rpc('get_busy_slots', {
+      p_date: date
+    });
 
     if (requestNumber !== slotRequest) return;
     if (result.error) throw result.error;
 
-    const allBusy = result.data || [];
-    if (!Array.isArray(allBusy)) throw new Error('Dolu saat bilgisi beklenen formatta gelmedi.');
-    const busy = allBusy.filter(item => String(item.barber_id) === String(barber.id));
+    const busy = (result.data || []).filter(item => Number(item.barber_id) === Number(barber.id));
+    if (!Array.isArray(busy)) throw new Error('Dolu saat bilgisi beklenen formatta gelmedi.');
 
     const now = new Date();
     const options = [];
@@ -397,24 +396,22 @@ async function bookAppointment() {
   button.textContent = 'KAYDEDİLİYOR...';
 
   try {
-    // Veritabanı yerel İstanbul tarih/saatini timestamp olarak bekliyor.
-    // ISO/toISOString kullanmak saati UTC'ye kaydırıp kayıt sorununa yol açabiliyordu.
-    const localStart = `${date} ${time}:00`;
-    const { error } = await db.rpc('book_appointment', {
+    const { data: bookingId, error } = await db.rpc('book_appointment', {
       p_customer_name: name,
       p_customer_phone: phone,
-      p_barber_id: barber.id,
+      p_barber_id: Number(barber.id),
       p_service_id: service.id,
-      p_start_at: localStart
+      // Veritabanı bu değeri Türkiye yerel saati olarak yorumlar.
+      p_start_at: `${date} ${time}:00`
     });
 
     if (error) {
-      const detail = String(error.message || '');
-      if (detail.includes('SLOT_TAKEN')) {
+      if (String(error.message || '').includes('SLOT_TAKEN')) {
         throw new Error('Bu saat az önce doldu. Lütfen başka bir saat seçin.');
       }
       throw error;
     }
+    if (!bookingId) throw new Error('Veritabanı randevu kaydı için onay döndürmedi.');
 
     // Kayıt başarılı olduktan sonra saat listesini yenile.
     // slots() kendi içinde mesajı temizlemediği için başarı mesajı kaybolmaz.
