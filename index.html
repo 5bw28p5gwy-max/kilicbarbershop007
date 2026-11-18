@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -6,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#111111">
 <title>KILIÇ BARBERSHOP | Online Randevu</title>
-
 <style>
 :root {
   color-scheme: dark;
@@ -30,10 +28,7 @@ body {
   margin: auto;
   padding: 28px 18px 50px;
 }
-.brand {
-  text-align: center;
-  padding: 28px 12px 22px;
-}
+.brand { text-align: center; padding: 28px 12px 22px; }
 .mark {
   font-family: Georgia, serif;
   font-size: 54px;
@@ -52,12 +47,7 @@ body {
   font-size: 11px;
   margin: 0;
 }
-.sub {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.7;
-  margin-top: 16px;
-}
+.sub { color: var(--muted); font-size: 13px; line-height: 1.7; margin-top: 16px; }
 .card {
   background: rgba(26,27,29,.96);
   border: 1px solid var(--line);
@@ -66,19 +56,9 @@ body {
   margin-top: 16px;
   box-shadow: 0 12px 36px #0005;
 }
-h2 {
-  font-size: 17px;
-  margin: 0 0 18px;
-  letter-spacing: 1px;
-  color: var(--gold);
-}
+h2 { font-size: 17px; margin: 0 0 18px; letter-spacing: 1px; color: var(--gold); }
 .field { margin-bottom: 16px; }
-label {
-  display: block;
-  font-size: 12px;
-  color: #c9c5bd;
-  margin-bottom: 7px;
-}
+label { display: block; font-size: 12px; color: #c9c5bd; margin-bottom: 7px; }
 input, select {
   width: 100%;
   padding: 14px 13px;
@@ -90,16 +70,8 @@ input, select {
   outline: none;
 }
 input:focus, select:focus { border-color: var(--gold); }
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-.hint {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.6;
-}
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.hint { color: var(--muted); font-size: 12px; line-height: 1.6; }
 .btn {
   width: 100%;
   border: 0;
@@ -112,10 +84,7 @@ input:focus, select:focus { border-color: var(--gold); }
   letter-spacing: .5px;
   cursor: pointer;
 }
-.btn:disabled {
-  opacity: .55;
-  cursor: wait;
-}
+.btn:disabled { opacity: .55; cursor: wait; }
 .status {
   margin-top: 14px;
   padding: 12px;
@@ -126,22 +95,9 @@ input:focus, select:focus { border-color: var(--gold); }
   overflow-wrap: anywhere;
 }
 .status.show { display: block; }
-.status.ok {
-  background: #183126;
-  border: 1px solid #35694d;
-  color: #c9f2d8;
-}
-.status.err {
-  background: #3a2020;
-  border: 1px solid #744040;
-  color: #ffd4d4;
-}
-.foot {
-  text-align: center;
-  color: #777;
-  font-size: 11px;
-  margin: 22px 0;
-}
+.status.ok { background: #183126; border: 1px solid #35694d; color: #c9f2d8; }
+.status.err { background: #3a2020; border: 1px solid #744040; color: #ffd4d4; }
+.foot { text-align: center; color: #777; font-size: 11px; margin: 22px 0; }
 @media(max-width:520px) {
   .grid { grid-template-columns: 1fr; gap: 0; }
   .card { padding: 18px; }
@@ -149,119 +105,74 @@ input:focus, select:focus { border-color: var(--gold); }
 }
 </style>
 </head>
-
 <body>
 <main class="wrap">
-
 <header class="brand">
   <div class="mark">K</div>
   <h1>KILIÇ BARBERSHOP</h1>
   <p>HOUSE OF SELECTED</p>
-  <div class="sub">
-    LOOK GOOD – FEEL GOOD<br>
-    Online Randevu Sistemi
-  </div>
+  <div class="sub">LOOK GOOD – FEEL GOOD<br>Online Randevu Sistemi</div>
 </header>
 
 <section class="card">
   <h2>RANDEVUNU OLUŞTUR</h2>
-
   <div class="field">
     <label for="service">Hizmet seç</label>
-    <select id="service">
-      <option value="">Hizmetler yükleniyor...</option>
-    </select>
+    <select id="service"><option value="">Hizmetler yükleniyor...</option></select>
   </div>
-
   <div class="field">
     <label for="barber">Berberini seç</label>
-    <select id="barber">
-      <option value="">Berberler yükleniyor...</option>
-    </select>
+    <select id="barber"><option value="">Berberler yükleniyor...</option></select>
   </div>
-
   <div class="grid">
     <div class="field">
       <label for="date">Tarih</label>
       <input id="date" type="date">
     </div>
-
     <div class="field">
       <label for="time">Saat</label>
-      <select id="time" disabled>
-        <option value="">Önce hizmet, berber ve tarih seçin</option>
-      </select>
+      <select id="time" disabled><option value="">Önce hizmet, berber ve tarih seçin</option></select>
     </div>
   </div>
-
   <div class="field">
     <label for="customer">Ad soyad</label>
-    <input
-      id="customer"
-      type="text"
-      maxlength="100"
-      placeholder="Adınız ve soyadınız"
-      autocomplete="name"
-      required
-    >
+    <input id="customer" type="text" maxlength="100" placeholder="Adınız ve soyadınız" autocomplete="name" required>
   </div>
-
   <div class="field">
     <label for="phone">Telefon numarası (zorunlu)</label>
-    <input
-      id="phone"
-      type="tel"
-      maxlength="20"
-      placeholder="05XX XXX XX XX"
-      autocomplete="tel"
-      required
-    >
+    <input id="phone" type="tel" maxlength="20" placeholder="05XX XXX XX XX" autocomplete="tel" required>
   </div>
-
-  <p class="hint">
-    Çalışma saatleri: Pazartesi–Cumartesi, 10.00–23.00.
-    Pazar kapalıdır. Randevular berberin uygunluğuna göre oluşturulur.
-  </p>
-
+  <p class="hint">Çalışma saatleri: Pazartesi–Cumartesi, 10.00–23.00. Pazar kapalıdır. Randevular berberin uygunluğuna göre oluşturulur.</p>
   <button class="btn" id="book" type="button">RANDEVU AL</button>
   <div id="status" class="status" role="status" aria-live="polite"></div>
 </section>
-
 <div class="foot">KILIÇ BARBERSHOP · MANAVGAT</div>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script>
 'use strict';
 
-/* SUPABASE BAĞLANTISI */
 const SUPABASE_URL = 'https://trrspituarolojducqni.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_jvxdGG3AIOUHcLESN4n77g_8tHn-ne7';
 
 const $ = id => document.getElementById(id);
-
 let db;
 let services = [];
 let barbers = [];
 let slotRequest = 0;
+let bookingInProgress = false;
 
 const pad = number => String(number).padStart(2, '0');
 
 function localDate(date) {
-  return [
-    date.getFullYear(),
-    pad(date.getMonth() + 1),
-    pad(date.getDate())
-  ].join('-');
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
 }
 
-/* TARİH VE SAATİ TARAYICININ YEREL SAATİYLE OLUŞTUR */
 function parseLocal(date, hour) {
-  return new Date(date + 'T' + hour + ':00');
+  return new Date(`${date}T${hour}:00`);
 }
 
-/* MESAJLAR */
 function message(text, type = 'error') {
   const status = $('status');
   status.textContent = String(text || 'Beklenmeyen bir hata oluştu.');
@@ -276,11 +187,9 @@ function hideMessage() {
 
 function showError(error, fallback) {
   console.error('KILIÇ BARBERSHOP:', error);
-  const detail = error && error.message ? error.message : fallback;
-  message(detail || 'Beklenmeyen bir hata oluştu.', 'error');
+  message(error?.message || fallback || 'Beklenmeyen bir hata oluştu.', 'error');
 }
 
-/* SEÇİMLER */
 function selectedService() {
   return services.find(item => String(item.id) === $('service').value);
 }
@@ -295,7 +204,6 @@ function overlaps(a, b, c, d) {
 
 function setOptions(select, placeholder, items, makeLabel) {
   select.replaceChildren();
-
   const first = document.createElement('option');
   first.value = '';
   first.textContent = placeholder;
@@ -309,7 +217,6 @@ function setOptions(select, placeholder, items, makeLabel) {
   });
 }
 
-/* HİZMETLERİ VE BERBERLERİ YÜKLE */
 async function load() {
   $('service').disabled = true;
   $('barber').disabled = true;
@@ -324,12 +231,9 @@ async function load() {
     const [serviceResult, barberResult] = await Promise.all([
       db.from('services')
         .select('id,name,price,duration_minutes')
-        .eq('active', true)
         .order('name'),
-
       db.from('barbers')
         .select('id,name')
-        .eq('active', true)
         .order('name')
     ]);
 
@@ -339,43 +243,25 @@ async function load() {
     services = serviceResult.data || [];
     barbers = barberResult.data || [];
 
-    if (!services.length) {
-      throw new Error('Aktif hizmet bulunamadı. Hizmet kayıtlarını kontrol edin.');
-    }
+    if (!services.length) throw new Error('Aktif hizmet bulunamadı.');
+    if (!barbers.length) throw new Error('Aktif berber bulunamadı.');
 
-    if (!barbers.length) {
-      throw new Error('Aktif berber bulunamadı. Berber kayıtlarını kontrol edin.');
-    }
-
-    setOptions(
-      $('service'),
-      'Hizmet seçiniz',
-      services,
-      item => `${item.name} – ${item.price} TL (${item.duration_minutes} dk)`
-    );
-
-    setOptions(
-      $('barber'),
-      'Berber seçiniz',
-      barbers,
-      item => item.name
-    );
+    setOptions($('service'), 'Hizmet seçiniz', services,
+      item => `${item.name} – ${item.price} TL (${item.duration_minutes} dk)`);
+    setOptions($('barber'), 'Berber seçiniz', barbers,
+      item => item.name);
 
     $('service').disabled = false;
     $('barber').disabled = false;
-
   } catch (error) {
     showError(error, 'Hizmet ve berber bilgileri yüklenemedi.');
   }
 }
 
-/* UYGUN SAATLERİ HESAPLA */
-async function slots() {
+async function slots(showErrors = true) {
   const requestNumber = ++slotRequest;
-
-  hideMessage();
-
   const timeSelect = $('time');
+
   timeSelect.disabled = true;
   timeSelect.innerHTML = '<option value="">Uygun saatler aranıyor...</option>';
 
@@ -388,9 +274,7 @@ async function slots() {
     return;
   }
 
-  const chosenDay = new Date(date + 'T12:00:00').getDay();
-
-  if (chosenDay === 0) {
+  if (new Date(date + 'T12:00:00').getDay() === 0) {
     timeSelect.innerHTML = '<option value="">Pazar günü kapalıyız</option>';
     return;
   }
@@ -404,21 +288,16 @@ async function slots() {
   }
 
   try {
-    const result = await db.rpc('get_booked_slots', {
-      p_barber_id: barber.id,
-      p_from: from.toISOString(),
-      p_until: until.toISOString()
-    });
+    // Veritabanındaki gerçek fonksiyon: get_busy_slots(p_date).
+    // Fonksiyon aynı günün tüm berberlerini döndürür; burada seçili berbere göre süzüyoruz.
+    const result = await db.rpc('get_busy_slots', { p_date: date });
 
     if (requestNumber !== slotRequest) return;
-
     if (result.error) throw result.error;
 
-    const busy = result.data || [];
-
-    if (!Array.isArray(busy)) {
-      throw new Error('Dolu saat bilgisi beklenen formatta gelmedi.');
-    }
+    const allBusy = result.data || [];
+    if (!Array.isArray(allBusy)) throw new Error('Dolu saat bilgisi beklenen formatta gelmedi.');
+    const busy = allBusy.filter(item => String(item.barber_id) === String(barber.id));
 
     const now = new Date();
     const options = [];
@@ -428,44 +307,25 @@ async function slots() {
       const start = parseLocal(date, time);
       const end = new Date(start.getTime() + Number(service.duration_minutes) * 60000);
 
-      if (
-        isNaN(start.getTime()) ||
-        isNaN(end.getTime()) ||
-        start <= now ||
-        end > until
-      ) {
-        continue;
-      }
+      if (!Number.isFinite(start.getTime()) || !Number.isFinite(end.getTime()) ||
+          start <= now || end > until) continue;
 
       const isBusy = busy.some(item => {
         const busyStart = new Date(item.start_at).getTime();
         const busyEnd = new Date(item.end_at).getTime();
-
-        if (!Number.isFinite(busyStart) || !Number.isFinite(busyEnd)) {
-          return false;
-        }
-
-        return overlaps(
-          start.getTime(),
-          end.getTime(),
-          busyStart,
-          busyEnd
-        );
+        return Number.isFinite(busyStart) && Number.isFinite(busyEnd) &&
+          overlaps(start.getTime(), end.getTime(), busyStart, busyEnd);
       });
 
       if (!isBusy) options.push(time);
     }
 
-    if (!options.length) {
-      timeSelect.innerHTML = '<option value="">Uygun saat yok</option>';
-      return;
-    }
+    if (requestNumber !== slotRequest) return;
 
     timeSelect.replaceChildren();
-
     const first = document.createElement('option');
     first.value = '';
-    first.textContent = 'Saat seçiniz';
+    first.textContent = options.length ? 'Saat seçiniz' : 'Uygun saat yok';
     timeSelect.appendChild(first);
 
     options.forEach(time => {
@@ -475,22 +335,19 @@ async function slots() {
       timeSelect.appendChild(option);
     });
 
-    timeSelect.disabled = false;
-
+    timeSelect.disabled = options.length === 0;
   } catch (error) {
     if (requestNumber !== slotRequest) return;
-
     timeSelect.innerHTML = '<option value="">Saatler yüklenemedi</option>';
-    showError(error, 'Uygun saatler alınamadı.');
+    if (showErrors) showError(error, 'Uygun saatler alınamadı.');
   }
 }
 
-/* RANDEVU KAYDET */
 async function bookAppointment() {
+  if (bookingInProgress) return;
   hideMessage();
 
   const button = $('book');
-
   const service = selectedService();
   const barber = selectedBarber();
   const date = $('date').value;
@@ -513,81 +370,79 @@ async function bookAppointment() {
     return;
   }
 
-  const selectedDay = new Date(date + 'T12:00:00').getDay();
-
-  if (selectedDay === 0) {
+  if (new Date(date + 'T12:00:00').getDay() === 0) {
     message('Pazar günü randevu alamıyoruz.');
     return;
   }
 
   const start = parseLocal(date, time);
-  const end = new Date(
-    start.getTime() + Number(service.duration_minutes) * 60000
-  );
-
+  const end = new Date(start.getTime() + Number(service.duration_minutes) * 60000);
   const opening = parseLocal(date, '10:00');
   const closing = parseLocal(date, '23:00');
 
-  if (
-    isNaN(start.getTime()) ||
-    isNaN(end.getTime()) ||
-    start < opening ||
-    end > closing ||
-    start <= new Date()
-  ) {
+  if (!Number.isFinite(start.getTime()) || !Number.isFinite(end.getTime()) ||
+      start < opening || end > closing || start <= new Date()) {
     message('Seçtiğiniz tarih veya saat geçerli değil. Lütfen yeniden seçin.');
     return;
   }
 
-  if (!Number.isFinite(Number(service.duration_minutes)) || Number(service.duration_minutes) <= 0) {
+  const duration = Number(service.duration_minutes);
+  if (!Number.isFinite(duration) || duration <= 0) {
     message('Hizmet süresi geçersiz. Lütfen işletmeyle iletişime geçin.');
     return;
   }
 
+  bookingInProgress = true;
   button.disabled = true;
   button.textContent = 'KAYDEDİLİYOR...';
 
   try {
-    const { error } = await db.from('appointments').insert({
-      customer_name: name,
-      customer_phone: phone,
-      barber_id: barber.id,
-      service_id: service.id,
-      start_at: start.toISOString(),
-      end_at: end.toISOString(),
-      status: 'booked'
+    // Veritabanı yerel İstanbul tarih/saatini timestamp olarak bekliyor.
+    // ISO/toISOString kullanmak saati UTC'ye kaydırıp kayıt sorununa yol açabiliyordu.
+    const localStart = `${date} ${time}:00`;
+    const { error } = await db.rpc('book_appointment', {
+      p_customer_name: name,
+      p_customer_phone: phone,
+      p_barber_id: barber.id,
+      p_service_id: service.id,
+      p_start_at: localStart
     });
 
     if (error) {
-      if (error.code === '23P01') {
+      const detail = String(error.message || '');
+      if (detail.includes('SLOT_TAKEN')) {
         throw new Error('Bu saat az önce doldu. Lütfen başka bir saat seçin.');
       }
       throw error;
     }
 
+    // Kayıt başarılı olduktan sonra saat listesini yenile.
+    // slots() kendi içinde mesajı temizlemediği için başarı mesajı kaybolmaz.
+    await slots(false);
+
     message(
       `Randevunuz kaydedildi! ${date} günü saat ${time} için ${barber.name} ile ${service.name}. Teşekkür ederiz.`,
       'success'
     );
-
-    $('time').value = '';
-    await slots();
-
   } catch (error) {
     showError(error, 'Randevu kaydedilemedi. Lütfen tekrar deneyin.');
   } finally {
+    bookingInProgress = false;
     button.disabled = false;
     button.textContent = 'RANDEVU AL';
   }
 }
 
-/* SAYFA BAŞLATMA */
 $('date').min = localDate(new Date());
 
 ['service', 'barber', 'date'].forEach(id => {
-  $(id).addEventListener('change', slots);
+  $(id).addEventListener('change', () => {
+    hideMessage();
+    slots();
+  });
 });
 
+$('time').addEventListener('change', hideMessage);
 $('book').addEventListener('click', bookAppointment);
 
 load();
